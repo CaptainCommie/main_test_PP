@@ -23,7 +23,6 @@ public class CharacterMovement : MonoBehaviour
     private void Update() {
         //this stores the value of the horizontal movement
         float horizontal_input = Input.GetAxis("Horizontal");
-        Debug.Log(horizontal_input);
         //This is the code for horizontal movement and does not affect vertical movement
         body.velocity = new Vector2(horizontal_input * speed, body.velocity.y);
         
