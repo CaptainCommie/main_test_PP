@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
     private bool grounded;      //checks whether the character is grounded
     [SerializeField] private float speed;       //this affects the speed of vertical movement
     [SerializeField] private float jump_power;      //this affects the height of the jump
+    [SerializeField] private float max_jumps = 2;       //this is how many jumps the character can do
+    private int jump_amount = 0;        //This relates to my double jumping mechanic
     
 
 
@@ -35,11 +37,16 @@ public class CharacterMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if(Input.GetKey(KeyCode.W) && grounded) {
-            Jump();
+        //This is the code for the jumping mechanic
+        if(Input.GetKey(KeyCode.W)) {
+            if (jump_amount < max_jumps) {
+                Jump();
+            }        
         }
-        else if(Input.GetKey(KeyCode.UpArrow) && grounded) {
-            Jump();
+        else if(Input.GetKey(KeyCode.UpArrow)) {
+            if (jump_amount < max_jumps) {
+                Jump();
+            }
         }
         
         
@@ -54,18 +61,20 @@ public class CharacterMovement : MonoBehaviour
         body.velocity = new Vector2(body.velocity.x, jump_power);
         anim.SetTrigger("jump");
         grounded = false;
+        jump_amount = jump_amount + 1;
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {        //when the player is touching the ground, this is true
         if (collision.gameObject.tag == "ground") {
             grounded = true;
+            jump_amount = 0;        //resets jump_amount to 1 when the player is grounded
 
         }
     }
     
     
-
+// GRAVITY ORIGINALLY SET TO 7
 
     
 }
