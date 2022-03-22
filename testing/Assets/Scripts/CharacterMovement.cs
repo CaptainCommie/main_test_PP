@@ -78,3 +78,7 @@ public class CharacterMovement : MonoBehaviour
         return ray_cast_hit.collider != null;
     }
 }
+
+
+
+//Needs to fix the double jump mechanic
