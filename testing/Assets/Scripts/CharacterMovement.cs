@@ -24,6 +24,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update() 
     {
+        Debug.Log(extra_jumps);
+        
         //this stores the value of the horizontal movement
         float horizontal_input = Input.GetAxis("Horizontal");
         //This moves the player is a horizontal direction

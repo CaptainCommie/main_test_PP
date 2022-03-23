@@ -1,0 +1,6 @@
+game settings
+
+Main character variables:
+gravity scale =7
+speed = 15
+jump_power = 25
