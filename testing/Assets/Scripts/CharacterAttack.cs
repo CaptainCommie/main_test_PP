@@ -12,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void Awake()
     {
+        //retreives references for each of the components
         anim = GetComponent<Animator>();
         character_movement = GetComponent<CharacterMovement>();
     }
@@ -28,7 +29,10 @@ public class CharacterAttack : MonoBehaviour
 
     private void Attack() 
     {
+        //sets the attack animation
         anim.SetTrigger("attack");
+        
+        //resets the cooldown timer
         cooldown_timer = 0;
     }
 }

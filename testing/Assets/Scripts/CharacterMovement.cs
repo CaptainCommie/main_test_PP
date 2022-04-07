@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float speed;       //this affects the speed of vertical movement
     [SerializeField] private float jump_power;      //this affects the height of the jump
     [SerializeField] private int extra_jumps_count;      //this is how many extra jumps a player has
+    [SerializeField] private float fall_speed;      //this affects the speed at the character falls when down key is pressed
     
     private int extra_jumps;
     
@@ -50,10 +51,12 @@ public class CharacterMovement : MonoBehaviour
         }
 
         //Makes the player jump whenever the space key is pressed once
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKeyDown("space")) 
         {
             Jump();
         }
+
+        //controls the aerial movement
     }
 
     //how the jump functions works
@@ -67,9 +70,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) 
-    {        
-    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+
+    } 
+            
+    
     
     //checks whether the player is grounded and returns a boolean
     private bool is_grounded() 
