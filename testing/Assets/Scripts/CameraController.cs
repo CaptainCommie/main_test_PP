@@ -8,11 +8,6 @@ public class CameraController : MonoBehaviour
    public Vector3 camera_offset;
    public float camera_speed;
 
-   void Update()
-   {  
-      
-   }
-
    void FixedUpdate()
    {
       Vector3 final_position = player.position + camera_offset;
