@@ -33,12 +33,6 @@ public class CharacterMovement : MonoBehaviour
         //Set the animation parameters
         anim.SetBool("running", horizontal_input != 0);
         anim.SetBool("grounded", is_grounded());
-
-        //sets variables if the character is grounded
-        if(is_grounded())
-        {
-            extra_jumps = extra_jumps_count;
-        }
         
         //This changes the direction the player is facing based of horizontal movement
         if(horizontal_input > 0.01f) 
@@ -56,7 +50,20 @@ public class CharacterMovement : MonoBehaviour
             Jump();
         }
 
+        //sets variables if the character is grounded
+        if(is_grounded())
+        {
+            extra_jumps = extra_jumps_count;
+        }
+        
         //controls the aerial movement
+        if(Input.GetKey(KeyCode.S))
+        {
+            if(!is_grounded())
+            {
+                body.velocity = new Vector2(body.velocity.x, -speed * fall_speed);
+            }
+        }
     }
 
     //how the jump functions works
@@ -69,12 +76,7 @@ public class CharacterMovement : MonoBehaviour
             extra_jumps--;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision) {
-
-    } 
-            
-    
+              
     
     //checks whether the player is grounded and returns a boolean
     private bool is_grounded() 
