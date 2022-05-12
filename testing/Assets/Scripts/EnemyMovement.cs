@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D body;
@@ -24,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
     
     void Update()
     {
-        
+        body.velocity = new Vector2(enemy_speed, body.velocity.y);
+
     }
 }
