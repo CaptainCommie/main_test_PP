@@ -9,13 +9,11 @@ public class EnemyMovement : MonoBehaviour
     private BoxCollider2D box_collider;
     [SerializeField] private float enemy_speed;
     [SerializeField] private float enemy_jump_power;
-
-
-    
-    // Start is called before the first frame update
+    private float horizontal_movement;
 
     void Awake()
     {
+        //grabs the references to the components
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -24,7 +22,13 @@ public class EnemyMovement : MonoBehaviour
     
     void Update()
     {
+        //horizontal_movement is the x axis movement
+        float horizontal_movement = body.velocity.x;
+        
+        anim.SetBool("running", horizontal_movement != 0);
+        
+        //moves the character to the right
         body.velocity = new Vector2(enemy_speed, body.velocity.y);
-
+        
     }
 }
