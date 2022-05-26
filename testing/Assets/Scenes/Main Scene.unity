@@ -178,7 +178,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05446233, y: -0.029422954}
+  m_Offset: {x: 0.0788973, y: -0.009141266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38276103, y: 0.58807886}
+  m_Size: {x: 0.46169317, y: 0.5257871}
   m_EdgeRadius: 0
 --- !u!212 &774644271
 SpriteRenderer:
@@ -251,8 +251,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774644268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.4631, y: -2.23, z: 0}
-  m_LocalScale: {x: 3.6625, y: 3.7663, z: 1}
+  m_LocalPosition: {x: -14.3588, y: -1.3318, z: 0}
+  m_LocalScale: {x: -3.8058, y: 4.1822777, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2916bfb331566b439b1870956cd3579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_speed: 5
-  enemy_jump_power: 5
+  enemy_speed: 6
+  enemy_jump_power: 0
 --- !u!1 &1323687291
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 1674913486}
   - component: {fileID: 1674913491}
   - component: {fileID: 1674913492}
+  - component: {fileID: 1674913493}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -691,6 +692,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack_cooldown: 0
+  anim: {fileID: 0}
+  character_movement: {fileID: 0}
+  cooldown_timer: 0
+--- !u!58 &1674913493
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674913485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.35181034}
+  serializedVersion: 2
+  m_Radius: 0.7349845
 --- !u!1 &1735174249
 GameObject:
   m_ObjectHideFlags: 0

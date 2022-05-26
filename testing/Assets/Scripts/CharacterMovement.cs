@@ -66,13 +66,15 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    //how the jump functions works
+    //checks whether the player has additional extra jumps and then jumps if the player has additional jumps
     private void Jump() 
     {
         if(extra_jumps > 0)
         {
             body.velocity = new Vector2(body.velocity.x, jump_power);
             anim.SetTrigger("jump");
+            
+            //decrements the amount of extra jumps so a player cannot jump infinitey
             extra_jumps--;
         }
     }
@@ -85,7 +87,3 @@ public class CharacterMovement : MonoBehaviour
         return ray_cast_hit.collider != null;
     }
 }
-
-
-
-//Needs to fix the double jump mechanic
