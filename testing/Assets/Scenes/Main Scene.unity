@@ -138,8 +138,8 @@ GameObject:
   - component: {fileID: 774644273}
   - component: {fileID: 774644274}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: enemy
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 7
@@ -290,8 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2916bfb331566b439b1870956cd3579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_speed: 6
+  enemy_speed: 2
   enemy_jump_power: 0
+  player: {fileID: 1674913490}
 --- !u!1 &1323687291
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,13 +689,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674913485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b6d4901f3845ed48b4685cef5953115, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ce38603e775af445bdc78c31e970908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attack_cooldown: 0
-  anim: {fileID: 0}
-  character_movement: {fileID: 0}
   cooldown_timer: 0
+  attack_damage: 1
+  character_health: 5
+  respawn_point: {x: 0, y: 0, z: 0}
 --- !u!58 &1674913493
 CircleCollider2D:
   m_ObjectHideFlags: 0
